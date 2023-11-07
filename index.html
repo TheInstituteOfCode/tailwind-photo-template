@@ -3,9 +3,9 @@ layout: default
 page_blocks:
   - _id: banner
     title: Banner
-    banner-height:
+    banner-height: tall-90
     fixed-banner: false
-    banner_image:
+    banner_image: 
     mobile-banner_image:
     banner-overlay:
     banner-heading:
@@ -19,11 +19,11 @@ page_blocks:
     title: Flexible Cols
     heading_html:
     column-links: false
-    columns: []
+    columns: 
   - _id: gallery
     title: Gallery Block
     heading_html:
-    gallery-images: []
+    gallery-images: 
     gallery-text_html:
   - _id: text-block
     title: Text Block
@@ -36,7 +36,7 @@ page_blocks:
   - _id: services-block
     title: Services Block
     heading_html:
-    services: []
+    services: 
   - _id: blog-loop
     title: Blop Loop
     heading_html:
@@ -53,6 +53,7 @@ page_blocks:
     button_url:
     button-text:
 ---
+
 {% for block in page.page_blocks %}
       {% include blocks/{{block._id}}.html block=block %}
 {% endfor %}

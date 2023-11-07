@@ -460,6 +460,9 @@ video {
 .hidden {
   display: none;
 }
+.min-h-100 {
+  min-height: 100vh;
+}
 .max-w-screen-xl {
   max-width: 1280px;
 }
@@ -515,11 +518,24 @@ a {
     color: inherit;
 }
 
+/* min-heights for clients */
+
+.tall-35{min-height: 35vh;}
+.tall-50{min-height: 50vh;}
+.tall-60{min-height: 60vh;}
+.tall-70{min-height: 70vh;}
+.tall-80{min-height: 80vh;}
+.tall-90{min-height: 90vh;}
+
+- tall-50
+- tall-60
+- tall-70
+- tall-80
+- tall-90
 
 /* dropdowns */
 
 header span {
-  list-style: none;
   display: inline-block;
   position: relative;
 }
