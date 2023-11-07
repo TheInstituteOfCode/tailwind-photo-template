@@ -1,0 +1,41 @@
+{% unless page.banner_image == nil %}
+
+<section class="banner {{page.banner-height}} grid banner-image-desktop banner-image-mobile">
+
+  {% unless page.banner-overlay == 'none' %}
+  <div class="overlay {{page.banner-overlay}}"> </div>
+  {% endunless %}
+
+  <div class="banner-inner col-12-{{page.banner-text-position}} padded {{page.banner-text-color}}-text {{page.banner-text-alignment}}">
+    <h1> <span class="{{page.banner-text-highlight}}-highlighted"> {{page.banner-text}} </span> </h1>
+  </div>
+
+</section>
+
+{% endunless %}
+
+{% if page.banner_image == nil %}
+
+<section class="padded padded-b-0 centered">
+  <h2> {{page.banner-text}} </h1>
+</section>
+
+{% endif %}
+
+<style>
+  .banner-image-desktop {
+    background-image: url({{page.banner_image}});
+  }
+
+  {% unless page.mobile-banner_image == nil %}
+
+  @media(max-width:767px) {
+    .banner-image-mobile {
+      background-image: url({{page.mobile-banner_image}});
+    }
+  }
+
+  {% endunless %}
+
+
+</style>

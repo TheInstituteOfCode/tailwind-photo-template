@@ -1,0 +1,43 @@
+desktop-links:
+  - title: Home
+    url: /index
+  - title : About
+    url: /about
+  - title: Portfolio
+    url: /portfolio
+    sublinks:
+      - title: Demo 1
+        url: /portfolio
+      - title: Demo 2
+        url: /demo-portfolio-2
+  - title: Blog
+    url: /blog
+    sublinks:
+      - title: Blog Style 1
+        url: /blog
+      - title: Blog Demo Style 2
+        url: /demo-blog-2
+  - title: Services
+    url: /work-with-me
+    sublinks:
+      - title: Work with me
+        url: /work-with-me
+      - title: Food
+        url: /services/food
+      - title: Fashion
+        url: /services/fashion
+      - title: Product
+        url: /services/product
+  - title: Contact
+    url: /contact
+mobile-links:
+  - title: Home
+    url: /index
+  - title : About
+    url: /about
+  - title: Portfolio
+    url: /portfolio
+  - title: Work with Me
+    url: /work-with-me
+  - title: Contact
+    url: /contact

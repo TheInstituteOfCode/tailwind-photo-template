@@ -1,0 +1,55 @@
+<section class="padded {{include.block.block-classes | join: ' ' }}">
+
+  <a href="cloudcannon:#page_blocks[{{ forloop.index0 }}]" class="editor-link" data-cms-editor-link-style="modal"> Edit section </a>
+
+  {% unless include.block.heading_html == nil %}
+
+  <div class="padded-05 centered">
+    {{include.block.heading_html}}
+    <hr class="centered">
+  </div>
+
+  {% endunless %}
+
+  <div class="portfolio {% if include.block.display-style == 'small posts' %} grid-center {% endif %}">
+
+    {% assign project-limit = include.block.number-of-projects %}
+
+    {% assign project-category = include.block.project-category %}
+
+    {% unless include.block.project-category == nil %}
+      {% assign relevant-projects = site.projects | where_exp:"project", "project.categories contains project-category" %}
+    {% else %}
+      {% assign relevant-projects = site.projects %}
+    {% endunless %}
+
+    {% assign relevant-projects = relevant-projects | sort: 'order' %}
+
+
+    {% for project in relevant-projects reversed limit:project-limit %}
+
+      {% if include.block.display-style == 'large posts' %}
+
+        {% include project-item.html %}
+
+      {% else %}
+
+        {% include project-loop-item-small.html %}
+
+      {% endif %}
+
+    {% endfor %}
+
+
+  </div>
+
+  {% unless include.block.button_url == nil %}
+
+  <div class="centered">
+    <!-- This links to the archive of blog posts -->
+    <a href="{{include.block.button_url}}" class="button"> {{include.block.button-text}} </a>
+  </div>
+
+  {% endunless %}
+
+</section>

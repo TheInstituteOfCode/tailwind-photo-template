@@ -1,0 +1,12 @@
+
+<!-- this is the blog post loop item. By putting it in an include, it means that we can just write the code once and ensure it looks good everywhere we use it on the site. -->
+
+<div class="{{page.column-size}} padded-05">
+    <a href="{{post.url}}" class="blog-item-small">
+        <div class="bg-image lazy {{page.blog-image-aspect-ratio}}" style="background-image:url({{post.featured-image_path}})"></div>
+      <div class="{{page.blog-item-background-color}} padded-1">
+        <h3> {{post.title}} </h3>
+        <p class="post-meta">{{post.date | date_to_string  }}</p>
+      </div>
+    </a>
+</div>

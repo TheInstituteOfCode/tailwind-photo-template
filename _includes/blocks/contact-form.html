@@ -1,0 +1,26 @@
+
+<section class="padded {{include.block.block-classes | join: ' ' }}">
+
+    <a href="cloudcannon:#page_blocks[{{ forloop.index0 }}]" class="editor-link" data-cms-editor-link-style="modal"> Edit section </a>
+    
+  <div class="capped-width">
+  {% unless include.block.heading_html == nil %}
+  <div class="padded-05 centered">
+    {{include.block.heading_html}}
+  </div>
+  {% endunless %}
+  <form class="contact-form grid" method="post" action="/thanks">
+        <div class="col-6_sm-12 padded-05">
+          <input type="text" name="your-name" placeholder="NAME" required>
+        </div>
+        <div class="col-6_sm-12 padded-05">
+          <input type="email" name="your-email" placeholder="EMAIL" required>
+        </div>
+        <div class="col-12 padded-05 centered">
+          <textarea name="your-message" placeholder="MESSAGE" required></textarea>
+          <input type="hidden" name="_to" value="{{site.data.settings.form-email}}">
+          <input class="button" type="submit" value="Submit">
+      </div>
+  </form>
+  </div>
+</section>

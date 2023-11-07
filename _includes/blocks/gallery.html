@@ -1,0 +1,25 @@
+<section class="gallery padded centered {{include.block.block-classes | join: ' ' }}">
+
+  <a href="cloudcannon:#page_blocks[{{ forloop.index0 }}]" class="editor-link" data-cms-editor-link-style="modal"> Edit section </a>
+
+  <div class="capped-width grid">
+
+  {% unless include.block.heading_html == nil %}
+  <div class="col-12">
+      {{include.block.heading_html}}
+  </div>
+
+  {% endunless %}
+
+    {% for item in include.block.gallery-images %}
+    <a class="{{col.column-size}}-{{col.column-alignment}} padded-02" href="{{item.image_path}}" data-fancybox="gallery">
+      <div style="background-image:url('{{item.image_path}}')" class="bg-image {{item.aspect-ratio}} lazy"></div>
+    </a>
+    {% endfor %}
+
+
+  <div class="margin-top-1"> {{include.block.gallery-text_html}}</div>
+
+  </div>
+
+</section>

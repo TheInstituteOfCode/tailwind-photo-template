@@ -1,0 +1,56 @@
+<section class="padded {{include.block.block-classes | join: ' ' }}">
+
+  <a href="cloudcannon:#page_blocks[{{ forloop.index0 }}]" class="editor-link" data-cms-editor-link-style="modal"> Edit section </a>
+
+
+  <div class="{{include.block.inner-block-classes | join: ' ' }} grid">
+
+    {% unless include.block.heading_html == nil %}
+      <div class="col-12">
+          {{include.block.heading_html}}
+      </div>
+    {% endunless %}
+
+      {% for service in include.block.services %}
+
+      <a href="{{service.url}}" class="service-link {{service.column-size}} padded-1 centered">
+
+          <div class="bg-image {{service.aspect-ratio}} overlay relative light-text" style="background-image:url({{service.featured_image}})">
+            <h3> {{service.title}} </h3>
+          </div>
+      </a>
+
+      {% endfor %}
+
+  </div>
+
+</section>
+
+
+<style>
+
+  .bg-image.overlay::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(#000,rgba(0,0,0,.6));
+    opacity: .5;
+    z-index: 1;
+}
+
+.bg-image.overlay:hover::after {
+  opacity: .3;
+}
+
+  .service-link h3 {
+    position: absolute;
+    top: calc(50%);
+    text-align: center;
+    z-index: 2;
+    width: 100%;
+  }
+
+</style>

@@ -1,0 +1,322 @@
+permalink: /:slug
+
+collections:
+  projects:
+    output: true
+  services:
+    output: true
+  modular-pages:
+    output: true
+    permalink: /:slug
+  archive:
+    output: true
+
+cloudcannon:
+  data:
+    categories: true
+
+styles:
+  - vertical
+  - horizontal
+
+sizes:
+  - full-width
+  - one-half
+  - one-third
+  - two-thirds
+
+aspect-ratios:
+  - portrait
+  - portrait-tall
+  - square
+  - landscape
+
+column-sizes:
+  - col-6_sm-12
+  - col-3_sm-12
+  - col-4_sm-12
+  - col-6
+  - col-3
+  - col-4
+  - col-3_sm-6_xs-12
+  - col-4_sm-6_xs-12
+
+column-alignment:
+  - top
+  - middle
+  - bottom
+
+background-colors:
+  - light-bg
+  - featured-bg
+  - dark-bg
+
+block-classes:
+  - light-bg
+  - featured-bg
+  - dark-bg
+  - light-text
+  - dark-text
+  - padded-1
+  - padded-2
+  - padded-5p
+  - centered
+
+inner-block-classes:
+  - light-bg
+  - featured-bg
+  - dark-bg
+  - light-text
+  - dark-text
+  - padded-1
+  - padded-2
+  - padded-5p
+  - centered
+  - capped-width
+  - capped-width-narrow
+
+banner-text-colors:
+  - light
+  - dark
+  - featured
+
+button-styles:
+  - light
+  - dark
+  - featured
+
+banner-heights:
+  - tall-35
+  - tall-50
+  - tall-60
+  - tall-70
+  - tall-80
+  - tall-90
+
+banner-overlays:
+  - none
+  - dark
+  - subtle-dark
+  - light
+  - subtle-light
+
+banner-text-highlights:
+  - none
+  - dark
+  - light
+  - featured
+
+banner-text-positions:
+  - top
+  - middle
+  - bottom
+
+banner-text-alignments:
+  - left
+  - centered
+  - right
+
+banner-text-sizes:
+  - 2.5rem
+  - 3rem
+  - 3.5rem
+  - 4rem
+  - 6vw
+  - 7vw
+  - 8vw
+
+display-styles:
+  - large posts
+  - small posts
+
+blog-image-aspect-ratios:
+  - portrait
+  - portrait-tall
+  - square
+  - landscape
+
+blog-item-background-color:
+  - light-bg
+  - featured-bg
+  - dark-bg
+  - none
+
+toolbar: &content_defaults
+  blockquote: true
+  right: align-to-right
+  center: align-to-center
+  left: align-to-left
+  horizontalrule: true
+  format: p h1 h2 h3 h4 h5 h6
+  bold: true
+  italic: true
+  numberedlist: true
+  embed: true
+  link: true
+  undo: true
+  redo: true
+  underline: true
+  strike: true
+  image: true
+  bulletedlist: true
+  styles: /assets/editor.css
+
+_options:
+  layout:
+    hidden: true
+  heading_html:
+    format: p h1 h2 h3 h4 h5 h6
+    right: align-to-right
+    center: align-to-center
+    left: align-to-left
+    bold: true
+    italic: true
+    link: true
+    horizontalrule: true
+    styles: /assets/editor.css
+  body-content_html:
+    *content_defaults
+  text_html:
+    *content_defaults
+  content_html:
+    *content_defaults
+  content:
+    *content_defaults
+
+sass:
+    sass_dir: _sass
+
+page_blocks: []
+_array_structures:
+  page_blocks:
+    - label: Banner
+      icon: format_quote
+      value:
+        _id: banner
+        title: Banner
+        banner-height:
+        fixed-banner: false
+        banner_image:
+        mobile-banner_image:
+        banner-overlay:
+        banner-heading:
+        banner-text-position: middle
+        banner-text-alignment: centered
+        banner-text-color:
+        banner-text-highlight:
+        button_url:
+        button-text:
+    - label: Flexible Cols
+      icon: format_quote
+      value:
+        _id: cols
+        title: Flexible Cols
+        block-classes:
+        heading_html:
+        column-links: false
+        columns: []
+    - label: Gallery
+      icon: format_quote
+      value:
+        _id: gallery
+        title: Gallery Block
+        block-classes:
+        heading_html:
+        gallery-images: []
+        gallery-text_html:
+    - label: Text Block
+      icon: format_quote
+      value:
+        _id: text-block
+        title: Text Block
+        block-classes:
+        inner-block-classes:
+        content_html:
+    - label: Instagram
+      icon: format_quote
+      value:
+        _id: instagram
+        title: Instagram Feed
+    - label: Contact Form
+      icon: format_quote
+      value:
+        _id: contact-form
+        title: Contact Form
+        heading_html:
+        block-classes:
+    - label: Services Links
+      icon: format_quote
+      value:
+        _id: services-block
+        title: Services Block
+        heading_html:
+        block-classes:
+        inner-block-classes:
+        services: []
+    - label: Blog Post Loop
+      icon: format_quote
+      value:
+        _id: blog-loop
+        title: Blop Loop
+        heading_html:
+        block-classes:
+        inner-block-classes:
+        column-size: col-3_sm-12
+        blog-image-aspect-ratio: portrait
+        blog-item-background-color:
+        number-of-posts: 4
+        post-category:
+        button_url:
+        button-text:
+    - label: Project Loop
+      icon: format_quote
+      value:
+        _id: project-loop
+        title: Project Loop
+        heading_html:
+        block-classes:
+        project-category:
+        number-of-projects:
+        button_url:
+        button-text:
+  columns:
+    label: Column
+    icon: collections
+    value:
+      text_html:
+      column-size: col-6_sm-12
+      column-alignment: middle
+      block-classes:
+      inner-block-classes:
+      column-background_image:
+      aspect-ratio:
+  gallery-images:
+    label: Gallery Images
+    icon: collections
+    value:
+      image_path:
+      aspect-ratio: portrait
+      column-sizes:
+  services:
+    label: Services
+    icon: collections
+    value:
+      title:
+      url:
+      featured_image:
+      column-size: col-4_sm-12
+      aspect-ratio: square
+  desktop-links:
+    - label: single link
+      icon: link
+      value:
+        text:
+        url:
+    - label: dropdown link
+      icon: link
+      value:
+        title:
+        url:
+        sublinks:
+          - text:
+            url:

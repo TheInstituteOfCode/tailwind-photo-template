@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="">
+        <div class="flex max-w-screen-xl mx-auto justify-between">
+            <div class="flex-shrink">
+            {% if site.data.settings.general.logo_path %}
+                <img src="{{site.data.settings.general.logo_path}}" alt="{{site.data.settings.general.logo_text}}" style="max-width: {{site.data.settings.general.logo_max-width}};" >
+            {% else %}
+                <h1>{{site.data.settings.general.logo_text}}</h1>
+                {% endif %}
+            </div>
+            <nav>
+                {% for link in site.data.navigation.desktop-links %}
+                
+                    {% if link.sublinks %}
+                    <span class="dropdown">
+                        <a href="{{ link.url }}" class="dropdown-toggle">{{ link.title }} <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            {% for sublink in link.sublinks %}
+                                    <li>
+                                        <a href="{{ sublink.url }}">{{ sublink.title }}</a>
+                                    </li>
+                            {% endfor %}
+                        </ul>
+                    </span>
+                    {% else %}
+                    <span>
+                        <a href="{{ link.url }}">{{ link.title }}</a>
+                    </span>
+                    {% endif %}
+                {% endfor %}
+            </nav>
+        </div>
+    </header>
+    {{content}}
+</body>
+</html>

@@ -1,0 +1,52 @@
+<section class="padded {{include.block.block-classes | join: ' ' }}">
+
+  <a href="cloudcannon:#page_blocks[{{ forloop.index0 }}]" class="editor-link" data-cms-editor-link-style="modal"> Edit section </a>
+
+  {% unless include.block.heading_html == nil %}
+  <div class="padded-05 centered">
+    {{include.block.heading_html}}
+  </div>
+  {% endunless %}
+
+  <div class="blog-loop {{include.block.inner-block-classes | join: ' ' }}">
+
+    {% assign post-limit = include.block.number-of-posts %}
+    {% assign post-category = include.block.post-category %}
+
+    {% unless include.block.post-category == nil %}
+      {% assign relevant-posts = site.categories[include.block.post-category] %}
+    {% else %}
+      {% assign relevant-posts = site.posts %}
+    {% endunless %}
+
+    <div class="grid">
+
+    {% for post in relevant-posts limit: post-limit %}
+
+    <div class="{{include.block.column-size}} padded-05">
+        <a href="{{post.url}}" class="blog-item-small">
+            <div class="bg-image lazy {{include.block.blog-image-aspect-ratio}}" style="background-image:url({{post.featured-image_path}})"></div>
+          <div class="{{include.block.blog-item-background-color}} padded-1">
+            <h3> {{post.title}} </h3>
+            <p class="post-meta">{{post.date | date_to_string  }}</p>
+          </div>
+        </a>
+
+      </div>
+
+    {% endfor %}
+
+    </div> <!-- end grid -->
+
+  </div> <!-- end blog loop container -->
+
+  {% unless include.block.button_url == nil %}
+
+  <div class="centered">
+    <!-- This links to the archive of blog posts -->
+    <a href="{{include.block.button_url}}" class="button"> {{include.block.button-text}} </a>
+  </div>
+
+  {% endunless %}
+
+</section>

@@ -1,0 +1,38 @@
+<section class="grid padded {{include.block.block-classes | join: ' ' }}">
+
+    <a href="cloudcannon:#page_blocks[{{ forloop.index0 }}]" class="editor-link" data-cms-editor-link-style="modal"> Edit section </a>
+
+  {% unless include.block.heading_html == nil %}
+  <div class="col-12">
+      {{include.block.heading_html}}
+  </div>
+  {% endunless %}
+
+  {% if include.block.column-links == true %}
+
+  {% for col in include.block.columns %}
+
+  <a href="{{col.link_url}}" class="{{col.column-size}}-{{col.column-alignment}} {{col.block-classes  | join: ' ' }}" >
+    <div class="{{col.inner-block-classes  | join: ' ' }} {{col.aspect-ratio}}" {% unless col.column-background_image == nil %} style="background-image: url({{col.column-background_image}}); background-size: cover; background-position: center;" {% endunless %}>
+    {{col.text_html}}
+    </div>
+  </a>
+
+  {% endfor %}
+
+
+  {% else %}
+
+  {% for col in include.block.columns %}
+
+  <div class="{{col.column-size}}-{{col.column-alignment}} {{col.block-classes  | join: ' ' }}">
+    <div class="{{col.inner-block-classes  | join: ' ' }} {{col.aspect-ratio}}" {% unless col.column-background_image == nil %} style="background-image: url({{col.column-background_image}}); background-size: cover; background-position: center;" {% endunless %}>
+    {{col.text_html}}
+    </div>
+  </div>
+
+  {% endfor %}
+
+  {% endif %}
+
+</section>

@@ -1,0 +1,67 @@
+<footer class="grid-centered centered" id="footer">
+  <!-- column -->
+  <div class="col-8_sm-12 padded">
+    <a href="/" class="footer-logo">
+
+      {% if site.data.settings.general.logo_path == nil %}
+
+      <h3> {{site.data.settings.general.logo-text}} </h3>
+
+      {% else %}
+
+      <img src="{{site.data.settings.general.logo_path}}" style="max-width: {{ site.data.settings.general.logo-max-width }}" class="header-logo-image" />
+
+      {% endif %}
+
+    </a>
+    <p class="subtle editable">
+      A short blurb about your and your talents.
+    </p>
+
+    <nav class="inline editable padded-1">
+      <a href="/about">About </a>| <a href="/portfolio"> Portfolio </a>| <a href="/work-with-me"> Work with Me </a>| <a href="/contact"> Contact </a>
+    </nav>
+    <nav class="inline socials">
+
+      {% unless site.data.settings.social.facebook_url == nil %}
+      <a href="{{site.data.settings.social.facebook_url}}" target="_blank">
+        <i class="fab fa-facebook-square"></i>
+      </a>
+      {% endunless %}
+
+      {% unless site.data.settings.social.instagram_url == nil %}
+      <a href="{{site.data.settings.social.instagram_url}}" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
+      {% endunless %}
+
+      {% unless site.data.settings.social.youtube_url == nil %}
+      <a href="{{site.data.settings.social.youtube_url}}" target="_blank">
+        <i class="fab fa-youtube"></i>
+      </a>
+      {% endunless %}
+
+      {% unless site.data.settings.social.linkedin_url == nil %}
+      <a href="{{site.data.settings.social.linkedin_url}}" target="_blank">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      {% endunless %}
+
+    </nav>
+  </div>
+  <div class="col-12 sub-footer centered">
+    <p>
+      <span class="editable"> Copyright 2020 </span>|
+      <span><a href="https://www.instituteofcode.com">Website built by Institute of Code </a> </span>|
+      <span class="editable"><a href="/privacy"> Privacy Policy </a> </span>
+    </p>
+    </div>
+</footer>
+
+{% if site.data.settings.general.show-back-to-top-button == true %}
+
+<div class="back-to-top">
+  <a href="#header"> ^ </a>
+</div>
+
+{% endif %}

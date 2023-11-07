@@ -1,0 +1,6 @@
+<a class="col-3_md-4_sm-6_xs-10 padded-1 portfolio-item portfolio-item-small {% for item in project.categories %} {{item | downcase }} {% endfor %}"
+href="{{project.url}}">
+  <div class="bg-image" style="background-image:url('{{project.featured_image}}')"></div>
+  <h2>{{project.title}}</h2>
+  <p> {{project.subtitle}}</p>
+</a>

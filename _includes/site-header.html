@@ -1,0 +1,57 @@
+<!-- This is your site header, you can replace this with whichever header you want to use -->
+
+<header class="grid-center {{page.header-style}}" id="header">
+  <nav class="col-4_sm-8-middle">
+    <a href="/" class="header-logo">
+
+      {% if site.data.settings.general.logo_path == nil %}
+
+      <h3> {{site.data.settings.general.logo-text}} </h3>
+
+      {% else %}
+
+      <img src="{{site.data.settings.general.logo_path}}" style="max-width: {{ site.data.settings.general.logo-max-width }}" class="header-logo-image">
+
+      {% endif %}
+
+    </a>
+  </nav>
+  <nav class="col-8_sm-4-middle right">
+    {% include desktop-navigation.html %}
+    <div class="hamburger mob-show">
+        _<br>
+        _<br>
+        _
+    </div>
+  </nav>
+</header>
+
+
+
+
+
+
+<!-- This is the mobile menu  -->
+<nav class="mobile-menu">
+    <a href="/" class="header-logo">
+
+      {% if site.data.settings.general.logo_path == nil %}
+
+      {{site.data.settings.general.logo-text}}
+
+      {% else %}
+
+      <img src="{{site.data.settings.general.logo_path}}" style="max-width: {{ site.data.settings.general.logo-max-width }}" class="header-logo-image">
+
+      {% endif %}
+
+    </a>
+  <hr>
+
+  {% for link in site.data.navigation.mobile-links %}
+
+  <a href="{{ link.url }}">{{ link.title }}</a>
+
+  {% endfor %}
+
+</nav>
