@@ -19,11 +19,16 @@ page_blocks:
     title: Flexible Cols
     heading_html:
     column-links: false
-    columns: 
+    columns:
+      - text_html: <p>dan is here</p>
+        column-size: col-6_sm-12
+        column-alignment: middle
+        column-background_image: /uploads/uluwatu.png
+        aspect-ratio: portrait
   - _id: gallery
     title: Gallery Block
     heading_html:
-    gallery-images: 
+    gallery-images: []
     gallery-text_html:
   - _id: text-block
     title: Text Block
@@ -36,7 +41,7 @@ page_blocks:
   - _id: services-block
     title: Services Block
     heading_html:
-    services: 
+    services: []
   - _id: blog-loop
     title: Blop Loop
     heading_html:
@@ -53,7 +58,6 @@ page_blocks:
     button_url:
     button-text:
 ---
-
 {% for block in page.page_blocks %}
       {% include blocks/{{block._id}}.html block=block %}
 {% endfor %}
