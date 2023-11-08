@@ -6,11 +6,11 @@ page_blocks:
     banner-height: tall-90
     fixed-banner: false
     banner_image: /uploads/75442984-10162737186175171-8003334474177708032-n.jpg
-    mobile-banner_image:
+    mobile-banner_image: /uploads/75442984-10162737186175171-8003334474177708032-n.jpg
     banner-overlay: subtle-light
     banner-heading: dan was here
-    banner-text-position: middle
-    banner-text-alignment: centered
+    banner-text-position: bottom
+    banner-text-alignment: right
     banner-text-color: dark
     banner-text-highlight:
     button_url:
@@ -57,5 +57,5 @@ page_blocks:
      -->
 
 {% for block in page.page_blocks %}
-      {% include blocks/{{block._id}}.html block=block %}
+      {% include blocks/{{block._id}}.html %}
 {% endfor %}
