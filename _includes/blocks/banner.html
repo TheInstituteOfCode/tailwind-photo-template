@@ -1,17 +1,40 @@
-<section class="banner {{include.block.banner-height}} grid
-        {% if include.block.fixed-banner == true %} fixed {% endif %}
-        banner-image-desktop-{{forloop.index}} banner-image-mobile-{{forloop.index}}">
+<section class="banner {{block.banner-height}} bg-center bg-cover flex 
+{{block.banner-text-alignment}}
+                  {% case block.banner-text-alignment %} 
+                      {% when 'left' %} justify-start
+                      {% when 'centered' %} justify-center 
+                      {% when 'right' %} justify-end 
+                  {% endcase %}
+
+                  {% case block.banner-text-position %} 
+                      {% when 'top' %} items-start
+                      {% when 'middle' %} items-center 
+                      {% when 'bottom' %} items-end 
+                  {% endcase %}
+        {% if block.fixed-banner == true %} fixed {% endif %}
+        banner-image-desktop-{{forloop.index}} banner-image-mobile-{{forloop.index}} ">
 
   <a href="cloudcannon:#page_blocks[{{ forloop.index0 }}]" class="editor-link" data-cms-editor-link-style="modal"> Edit section </a>
 
   {% unless include.block.banner-overlay == 'none' %}
-  <div class="overlay {{include.block.banner-overlay}}"> </div>
+  <div class="absolute inset-0 overlay {{block.banner-overlay}}"> </div>
   {% endunless %}
 
-  <div class="banner-inner col-12-{{include.block.banner-text-position}} padded {{include.block.banner-text-color}}-text {{include.block.banner-text-alignment}}">
-    <h2 class="{{include.block.banner-text-alignment}}"> <span class="{{include.block.banner-text-highlight}}-highlighted"> {{include.block.banner-heading}} </span> </h2>
+  <div class="banner-inner padded {% case block.banner-text-color %}
+    {% when 'light' %} text-[var(--text-light-color)]
+    {% when 'dark' %} text-[var(--text-color)]
+    {% when 'featured' %} text-[var(--text-featured-color)]
+    {% endcase %}
+
+    
+    {{block.banner-text-alignment}}">
+    <h2 class="{{include.block.banner-text-alignment}}"> <span class="
+      {% case block.banner-text-highlight%} 
+      {% when 'dark' %} dark-highlighted
+      {% when 'light' %} light-highlighted
+      {% when 'featured' %} featured-highlighted  {% endcase %}"> {{block.banner-heading}} </span> </h2>
     {% unless include.block.button_url == nil %}
-    <a class="button {{include.block.button-style}}" href="{{include.block.button_url}}"> {{include.block.button-text}}</a>
+    <a class="button {{include.block.button-style}}" href="{{block.button_url}}"> {{include.block.button-text}}</a>
     {% endunless %}
   </div>
 
@@ -20,16 +43,28 @@
 
 <style>
   .banner-image-desktop-{{forloop.index}} {
-    background-image: url({{include.block.banner_image}});
+    background-image: url({{block.banner_image}});
   }
 
-  {% unless include.block.mobile-banner_image == nil %}
+  .banner-image-desktop-{{forloop.index}} > .banner-inner{
+  {% unless block.max-width == nil %}
+
+    max-width: {{block.max-width}}px;
+    margin:auto;
+    {% endunless %}
+    
+    {% unless block.side-padding == nil %}
+    padding-left: {{block.side-padding}}%;
+    padding-right: {{block.side-padding}}%; 
+    {% endunless %}
+  }
+  {% unless block.mobile-banner_image == nil %}
 
   @media(max-width:767px) {
     .banner-image-mobile-{{forloop.index}} {
-      background-image: url({{include.block.mobile-banner_image}});
+      background-image: url({{block.mobile-banner_image}});
     }
   }
-
   {% endunless %}
+
 </style>

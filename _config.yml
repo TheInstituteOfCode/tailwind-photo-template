@@ -195,6 +195,9 @@ _array_structures:
         _id: banner
         title: Banner
         banner-height:
+        max-width:
+        side-padding:
+        verticle-padding:
         fixed-banner: false
         banner_image:
         mobile-banner_image:
@@ -320,3 +323,12 @@ _array_structures:
         sublinks:
           - text:
             url:
+
+_inputs:
+  max-width:
+    type: number
+  side-padding:
+    type: range
+      min: 0
+      max: 45  
+  

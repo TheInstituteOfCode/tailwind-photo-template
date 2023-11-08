@@ -101,3 +101,33 @@ header .dropdown:hover .dropdown-menu {
   border-radius: 50px;
   z-index: 10;
 }
+
+/* overlays */
+
+.dark.overlay{background-color: var(--bg-dark-color);opacity:.7}
+.subtle-dark.overlay{background-color: var(--bg-dark_color);opacity: .3;}
+.light.overlay{background-color: var(--bg-light-color); opacity: .7;}
+.subtle-light.overlay{background-color: var(--bg-light-color);opacity: .3;}
+
+
+/* highlighted text */
+
+
+.highlighted-text,
+.light-highlighted {
+  background-color: var(--bg-light-color);
+  box-shadow: 15px 0px 0px 2px  var(--bg-light-color), -10px 0px 0px 2px  var(--bg-light-color);
+  line-height: 1.7;
+}
+
+.dark-highlighted {
+  background-color: var(--bg-dark-color);
+  box-shadow: 15px 0px 0px 2px  var(--bg-dark-color), -10px 0px 0px 2px  var(--bg-dark-color);
+  line-height: 1.7;
+}
+
+.featured-highlighted {
+  background-color: $bg-featured_color;
+  box-shadow: 15px 0px 0px 2px  $bg-featured-color, -10px 0px 0px 2px  $bg-featured-color;
+  line-height: 1.7;
+}

@@ -31,6 +31,8 @@ design:
   bg-dark_color: '#3c3c3c'
   bg-featured_color: '#b5b5bc'
   text_color: '#3c3c3c'
+  text_light_color: '#ccc'
+  text_featured_color: '#272'
   text-font-family: '''Lora'', sans-serif'
   text-heading_color: '#3c3c3c'
   text-heading-font-family: '''Lato'', serif'
