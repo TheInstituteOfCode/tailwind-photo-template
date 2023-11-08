@@ -58,11 +58,7 @@ a {
 .tall-80{min-height: 80vh;}
 .tall-90{min-height: 90vh;}
 
-- tall-50
-- tall-60
-- tall-70
-- tall-80
-- tall-90
+
 
 /* dropdowns */
 
@@ -89,4 +85,19 @@ header .dropdown:hover .dropdown-menu {
   right: -1rem;
   background-color: white;
   z-index: 2;
+}
+
+
+/* cloudcannon specifics */
+
+.editor-link {
+  display: none;
+  position: absolute;
+  right: 1rem;
+  margin-top: 0;
+  color: #FF4C4C;
+  padding: 0.2rem 1rem;
+  border: 1px solid;
+  border-radius: 50px;
+  z-index: 10;
 }
