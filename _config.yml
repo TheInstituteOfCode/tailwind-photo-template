@@ -329,7 +329,8 @@ _inputs:
     type: number
   side-padding:
     type: range
-    step: 1
-    min: 0
-    max: 45
+    options:
+      step: 1
+      min: 0
+      max: 45
   
