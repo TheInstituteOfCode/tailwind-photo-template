@@ -1,16 +1,4 @@
-<section class="banner {{block.banner-height}} bg-center bg-cover flex 
-{{block.banner-text-alignment}}
-                  {% case block.banner-text-alignment %} 
-                      {% when 'left' %} justify-start
-                      {% when 'centered' %} justify-center 
-                      {% when 'right' %} justify-end 
-                  {% endcase %}
-
-                  {% case block.banner-text-position %} 
-                      {% when 'top' %} items-start
-                      {% when 'middle' %} items-center 
-                      {% when 'bottom' %} items-end 
-                  {% endcase %}
+<section class="banner {{block.banner-height}} bg-center bg-cover 
         {% if block.fixed-banner == true %} fixed {% endif %}
         banner-image-desktop-{{forloop.index}} banner-image-mobile-{{forloop.index}} ">
 
@@ -25,7 +13,19 @@
     {% when 'dark' %} text-[var(--text-color)]
     {% when 'featured' %} text-[var(--text-featured-color)]
     {% endcase %}
+    flex 
+    {{block.banner-text-alignment}}
+                      {% case block.banner-text-alignment %} 
+                          {% when 'left' %} justify-start text-left
+                          {% when 'centered' %} justify-center text-center
+                          {% when 'right' %} justify-end text-right
+                      {% endcase %}
 
+                      {% case block.banner-text-position %} 
+                          {% when 'top' %} items-start
+                          {% when 'middle' %} items-center 
+                          {% when 'bottom' %} items-end 
+                      {% endcase %}
     
     {{block.banner-text-alignment}}">
     <h2 class="{{include.block.banner-text-alignment}}"> <span class="
