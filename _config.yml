@@ -329,6 +329,6 @@ _inputs:
     type: number
   side-padding:
     type: range
-      min: 0
-      max: 45  
+    min: 0
+    max: 45  
   
